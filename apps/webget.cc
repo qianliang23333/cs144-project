@@ -9,10 +9,26 @@
 using namespace std;
 
 namespace {
-void get_URL( const string& host, const string& path )
-{
-  debug( "Function called: get_URL( \"{}\", \"{}\" )", host, path );
-  debug( "get_URL() function not yet implemented" );
+void get_URL(const string& host, const string& path) {
+    // 1. 连接
+    Address address(host, "http");
+    TCPSocket sock;
+    sock.connect(address);
+    
+    // 2. 发送请求
+    sock.write("GET " + path + " HTTP/1.1\r\n");
+    sock.write("Host: " + host + "\r\n");
+    sock.write("Connection: close\r\n");
+    sock.write("\r\n");
+    
+    // 3.读取方式
+    while (!sock.eof()) {
+        std::string buffer;        // 创建 buffer
+        sock.read(buffer);         // 读取数据到 buffer（没有返回值）
+        std::cout << buffer;       // 输出 buffer
+    }
+    // 4. 关闭
+    sock.close();
 }
 } // namespace
 

@@ -5,7 +5,7 @@
 # ====================== 配置项（已填好，无需修改）======================
 GITHUB_REPO_URL="https://github.com/qianliang23333/cs144-project.git"
 BRANCH_NAME="main"
-COMMIT_MESSAGE="feat: 完成 CS144 MINNOW 项目的环境测试，能够正常运行c++基本环境"
+COMMIT_MESSAGE="feat: 完成lab0的部分测试"
 # 可选：填写你的GitHub用户名/邮箱（首次使用自动配置）
 GIT_USER_NAME="qianliang23333"
 GIT_USER_EMAIL="3405046449@qq.com"  # 替换为真实邮箱
